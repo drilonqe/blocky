@@ -14,8 +14,8 @@ public class Board {
     }
     
     public boolean isValidPosition(int row, int col) {
-        return row >= 0 && row < (well.length - 3) && col >= 0 && col <= well[0].length - 1; // cite fui
-    } // changed from <= well.length to < well....
+        return row >= 0 && row < (well.length - 3) && col >= 0 && col <= well[0].length - 1;
+    }
     
     public boolean collides(Piece p) {
         return collides(p.getLayout(), p.getPosition());
@@ -60,8 +60,8 @@ public class Board {
             for (int col = 0; col < Constants.BOARD_WIDTH; col++) {
                 well[row][col] = well[row-1][col];
             }
-        } // top to bottom not bottom to top
-    } //flipped the for statemnets
+        } 
+    } 
     
     public void deleteRows(List rows) {
         for (int i = 0; i < rows.size(); i++) {
