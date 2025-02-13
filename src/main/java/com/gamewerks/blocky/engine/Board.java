@@ -14,13 +14,8 @@ public class Board {
     }
     
     public boolean isValidPosition(int row, int col) {
-
         return row >= 0 && row < (well.length - 3) && col >= 0 && col <= well[0].length - 1; // cite fui
     } // changed from <= well.length to < well....
-
-        return row >= 0 && row <= well.length && col >= 0 && col <= well[0].length;
-    }
-
     
     public boolean collides(Piece p) {
         return collides(p.getLayout(), p.getPosition());
@@ -58,27 +53,15 @@ public class Board {
     }
     
     public void deleteRow(int n) {
-
         for (int col = 0; col < Constants.BOARD_WIDTH; col++) {
             well[n][col] = false;
         }
-         for (int row = n; row > 0; row--) {
-            for (int col = 0; col < Constants.BOARD_WIDTH; col++) {
-                well[row][col] = well[row-1][col];
-            }
-        } // top to bottom not bottom to top
-    } //flipped the for statemnets
-
-        for (int row = 0; row < n - 1; row++) {
+         for (int row = 0; row < n - 1; row++) {
             for (int col = 0; col < Constants.BOARD_WIDTH; col++) {
                 well[row][col] = well[row+1][col];
             }
-        }
-        for (int col = 0; col < Constants.BOARD_WIDTH; col++) {
-            well[n][col] = false;
-        }
-    }
-
+        } // top to bottom not bottom to top
+    } //flipped the for statemnets
     
     public void deleteRows(List rows) {
         for (int i = 0; i < rows.size(); i++) {
@@ -99,11 +82,7 @@ public class Board {
         List completedRows = new LinkedList();
         for (int row = 0; row < Constants.BOARD_HEIGHT; row++) {
             if (isCompletedRow(row)) {
-
                 completedRows.add(row); //row instead of well row 
-
-                completedRows.add(well[row]);
-
             }
         }
         return completedRows;
