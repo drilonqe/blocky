@@ -19,7 +19,6 @@ public class BlockyGame {
     
     private int lockCounter;
     
-    //created this
     private void pieceInitialize() {
         pieceType = PieceKind.values();
         shufflePieceTypes();
