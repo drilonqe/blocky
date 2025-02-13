@@ -105,7 +105,7 @@ public class BlockyGame {
     
     public void step() {
         trySpawnBlock();
-        processMovement(); // added this line
+        processMovement(); // step processes movement
         processGravity();
         processClearedLines();
     }
