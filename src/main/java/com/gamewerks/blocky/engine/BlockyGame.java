@@ -19,13 +19,18 @@ public class BlockyGame {
     
     private int lockCounter;
     
+    /**
+     * Initializes all piece types and shuffles them
+     */
     private void pieceInitialize() {
         pieceType = PieceKind.values();
         shufflePieceTypes();
         pieceIndex = 0;
     }
     
-    
+    /**
+     * Shuffles the pieceType array using the Fisher-Yates shuffle
+     */
     private void shufflePieceTypes() {
         Random r = new Random();
         for (int i = pieceType.length -1; i>0; i--) {
