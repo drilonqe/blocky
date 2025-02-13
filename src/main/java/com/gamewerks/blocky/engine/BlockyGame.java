@@ -26,10 +26,7 @@ public class BlockyGame {
         pieceIndex = 0;
     }
     
-    //cite https://www.geeksforgeeks.org/randomly-select-items-from-a-list-in-java/
-  // referred to code from c++ https://www.geeksforgeeks.org/shuffle-a-given-array-using-fisher-yates-shuffle-algorithm/
-   
-    // new func
+    
     private void shufflePieceTypes() {
         Random r = new Random();
         for (int i = pieceType.length -1; i>0; i--) {
