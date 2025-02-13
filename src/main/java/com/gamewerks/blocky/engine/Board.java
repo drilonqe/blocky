@@ -56,9 +56,9 @@ public class Board {
         for (int col = 0; col < Constants.BOARD_WIDTH; col++) {
             well[n][col] = false;
         }
-         for (int row = 0; row < n - 1; row++) {
+         for (int row = n; row > 0; row--) {
             for (int col = 0; col < Constants.BOARD_WIDTH; col++) {
-                well[row][col] = well[row+1][col];
+                well[row][col] = well[row-1][col];
             }
         } // top to bottom not bottom to top
     } //flipped the for statemnets
