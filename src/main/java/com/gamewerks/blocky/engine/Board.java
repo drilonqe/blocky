@@ -82,7 +82,7 @@ public class Board {
         List completedRows = new LinkedList();
         for (int row = 0; row < Constants.BOARD_HEIGHT; row++) {
             if (isCompletedRow(row)) {
-                completedRows.add(row); //row instead of well row 
+                completedRows.add(row); //row instead of well[row]  
             }
         }
         return completedRows;
